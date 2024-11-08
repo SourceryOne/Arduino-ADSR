@@ -6,7 +6,7 @@
  * But for now this is just testing so it all works.
  */
 // Define the target value and the ramp duration
-const long maxValue = 65536;    // The maximum value we want to reach ... A 16-bit register can store 216 different values. The signed range of integer values that can be stored in 16 bits is −32,768 (−1 × 215) through 32,767 (215 − 1); the unsigned range is 0 through 65,535 (216 − 1).
+const long maxValue = 65535;    // The maximum value we want to reach ... A 16-bit register can store 216 different values. The signed range of integer values that can be stored in 16 bits is −32,768 (−1 × 215) through 32,767 (215 − 1); the unsigned range is 0 through 65,535 (216 − 1).
 int rampDuration = 1000; // Ramp duration in milliseconds (1 second)
 
 int trig1active=0;
