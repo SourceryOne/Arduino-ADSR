@@ -1,0 +1,15 @@
+#include <EEPROM.h>
+/*
+ * 
+ * 
+ *0.4 working on adding nLoop, and EndOf
+ *only save the value to eeprom when you change channel, also save which channel is connected.
+ *This has been replaced with save only when save is pressed ;)
+ *0.5 nLoop should work, EndOf should work, check CVinput, and if the opamp can be other than mcp6002
+ *HAVE TO FIX EnvelopeWrite2 as it is wrong!
+ *0.6
+ */
+ 
+ 
+ 
+ 
