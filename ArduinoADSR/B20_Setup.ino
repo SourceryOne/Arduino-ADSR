@@ -45,7 +45,7 @@ void setup() {
   readEeprom(100);
 
   //The nDecay needs the original values of the maxvalues and sustainmultiplier.
-  originalMaxValue=maxValue;
-  originalSustainMultiplier=sustainMultiplier;
+  //originalMaxValue=maxValue;
+  //originalSustainMultiplier=sustainMultiplier;
   
 }

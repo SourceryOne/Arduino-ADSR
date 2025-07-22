@@ -67,7 +67,9 @@ void envelopeStartGate1() {
     if (envelope1Phase==34) { //inbetween sustain and release
       //MOVE TO RELEASE
       envelope1Phase=4;
-      startingValueRelease1 = currentValue1;
+      currentValue1=sustainValueCh1*sustainMultiplierCh1; //set to see if we can remove the drop in amplitude here...?
+      
+      //not used? startingValueRelease1 = currentValue1;
       switch (CVcontrol) {
         //case 0: USE DEFAULT INSTEAD 250619
           //rampDuration1 = releaseValueCh1 * release1Multiplier; 
@@ -90,31 +92,35 @@ void envelopeStartGate1() {
 
 //CHANNEL 2
 void envelopeStartGate2() {
-  //TURN OFF THIS WHOLE THING IF WE ARE IN OTHER MODE.
   //GATE ON
-  if (gate2Active || (moduleMode==2 && gate1Active)) {
+  if (gate2Active==1) { 
     if (envelope2Phase==0 || envelope2Phase==4) { //start the envelope
       envelope2Phase=1; //Set the phase to Attack 
-      rampDuration2 = attackValueCh2 * attack2Multiplier; //attackValueCh1 is set in the checkPots() function, attack multiplier set in the menu from fixed values in the config file.
+      rampDuration2 = attackValueCh2 * attack2Multiplier; //attackValueCh2 is set in the checkPots() function, attack multiplier set in the menu from fixed values in the config file.
+      
       startTime2 = millis();  // Record the start time
+      currentValue2 = 0;
     } else if (envelope2Phase==12) {
       //MOVE TO DECAY
       envelope2Phase=2; 
       currentValue2 = maxValueCh2;
       rampDuration2 = decayValueCh2 * decay2Multiplier;
+      
       startTime2 = millis();       
     } else if (envelope2Phase==23) {
       //MOVE TO SUSTAIN
-        envelope2Phase=3;
-        currentValue2 = sustainValueCh2*sustainMultiplier;                                 // *32 ändra om man vill göra till 64000 eller annat!
+      envelope2Phase=3;
+      currentValue2 = sustainValueCh2*sustainMultiplier;
+      
     }
   } else { //NO GATE
     if (envelope2Phase>0 && envelope2Phase<=3) { envelope2Phase=34; }
     if (envelope2Phase==34) { //inbetween sustain and release
       //MOVE TO RELEASE
-      envelope2Phase=4; 
-      startingValueRelease2 = currentValue2;
+      envelope2Phase=4;
+      //not used? startingValueRelease2 = currentValue2;
       rampDuration2 = releaseValueCh2 * release2Multiplier; 
+      
       startTime2 = millis();       
     }
   }

@@ -10,7 +10,8 @@ void loop() {
   catchPots(); //If the pots are released, then catch the pots and then read the values.
 
   if (envelope1Phase==40) { envelope1Phase=0; } //set the envelopephase to 0 for envelope 1.
-
+  if (envelope2Phase==40) { envelope2Phase=0; } //set the envelopephase to 0 for envelope 2.
+  
   //ACT FUNCTIONALITY
   switch(actCh1) {
     case 0:
@@ -67,9 +68,22 @@ void loop() {
     maxValueCh1=maxValue;
     sustainMultiplierCh1=sustainMultiplier;
   }
-
+  if (nLoop2Active==0) {
+    maxValueCh2=maxValue;
+    sustainMultiplierCh2=sustainMultiplier;
+  }
   //Serial.print(sustainValueCh1); //the adding of the CV value to THIS variable messes upp the changing of channels and the values of the channel value, also when selecting target for cv messes up along the way...
-  //Serial.print(" ");
+  Serial.print (" attval: ");
+  Serial.print(attackValueCh2);
+  Serial.print (" gate: ");
+  Serial.print(gate2Active);
+  Serial.print (" phase: ");
+  Serial.print(envelope2Phase);
+  Serial.print (" rampdur:");
+  Serial.print(rampDuration2);
+  Serial.print (" val: ");
+  Serial.println(currentValue2);
+//   sustainValueCh1wCV=map(,0,1023,,1023); //or just limit the lower voltage?
   //Serial.println(sustainValueCh1wCV); //the adding of the CV value to THIS variable messes upp the changing of channels and the values of the 
 /*  Serial.print (envelope1Phase);
   Serial.print (" ");

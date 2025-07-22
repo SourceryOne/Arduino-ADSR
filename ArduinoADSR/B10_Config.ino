@@ -35,20 +35,20 @@ const byte button4=17; //A3
 //============== Constants for functions in the code, can be altered to your liking... ===================
 const bool debug=1;
 //if (debug==1) { }
-unsigned int maxValue = 65000; //32768; //Removed const for nDecay to easily work. // 32,767 The maximum value we want to reach (was long), this might be a good value to "tune" as different circuits might have different maximums on this value?
+unsigned int maxValue = 61400; //61400 is just above 61380 which is 1023*60 (for sustain) 32768; //Removed const for nDecay to easily work. // 32,767 The maximum value we want to reach (was long), this might be a good value to "tune" as different circuits might have different maximums on this value?
 unsigned int maxValueCh1 = maxValue; //for two independent maxValues while in nDecaymode for example.
 unsigned int maxValueCh2 = maxValue;
 //unsigned int originalMaxValue; //is set to maxValue in setup. Used for nDecay. Could be omited if using maxValueCh1 and Ch2 instead...
 
-byte sustainMultiplier = 63;//63 because if it is 64 it becomes larger than decay and will make a mess of that part of the envelope. //32; //Removed const for nDecay to easily work. should correlate to the above value so at 1023*sustainMultiplier they are the same... 32 or 64. But 64 could be saved for Accent ;)
+byte sustainMultiplier = 60;//63 because if it is 64 it becomes larger than decay and will make a mess of that part of the envelope. //32; //Removed const for nDecay to easily work. should correlate to the above value so at 1023*sustainMultiplier they are the same... 32 or 64. But 64 could be saved for Accent ;)
 byte sustainMultiplierCh1 = sustainMultiplier;
 byte sustainMultiplierCh2 = sustainMultiplier;
-byte originalSustainMultiplier; //is set to sustainMultiplier in setup. Used for nDecay. could be omitted if using two above Ch1, Ch2
+//byte originalSustainMultiplier; //is set to sustainMultiplier in setup. Used for nDecay. could be omitted if using two above Ch1, Ch2
 const int menuHoldTime=500; //how long you should hold the button to go into hold menu. (in milliseconds).
 //The three different time windows you can choose for each curve.
-const int envelopeMultiplier0=1;
-const int envelopeMultiplier1=10;
-const int envelopeMultiplier2=100;
+const int envelopeMultiplier0=0.5;
+const int envelopeMultiplier1=5;
+const int envelopeMultiplier2=50;
 
 const bool advancedExponent=1; //Latest WORKS, but only between 0.5 and 3.5 with 1 in the middle. NOT WORKING!!!! if set to 0 the exponent is just three values as set below. In advanced mode you have a free running scale with left always being 1 and left and right be set below for more wild curves.
 float exponentRange=3; // max-min so 3.5-0.5=3 used to center the exponent around 1.0=linear.
@@ -56,8 +56,8 @@ const float envelopeExponent0=0.5;
 const float envelopeExponent1=1;
 const float envelopeExponent2=3.5;
 
-//ELLER:
-//attack1Multiplier
+
+//Denna ska vara dynamiskt satt efter 60000 saves byt adress. antal och adress ska ligga i EEPROM.
 int eepromStartAddress=0;
 
 
@@ -112,10 +112,6 @@ int menuA1CV; //third func-menu on the Attack for which input the CV should cont
 int menuD1nDecay, menuD2nDecay; //fourth function for the decay of the nLoops.
 
 byte modeNr;
-//int menuValue1=0;
-//int menuValue2=0;
-//int menuValue3=0;
-//int menuValue4=0;
 byte ledSegments=0b00000000;
 byte menuLedColor1=0; //colors for the leds when inside the menu. 0-3 0=green, 1=red, 2=yellow, 3 and up=off
 byte menuLedColor2=0;

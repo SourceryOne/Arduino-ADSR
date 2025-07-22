@@ -16,26 +16,28 @@ void menu1() {
         attack1Exponent=1.0; 
         menuLedColor1=2;
       }
+// Somehow this seems to be inverted? Maybe because they are negative?       
       if (menuD1Exp<=500) {
-        decay1Exponent = 0.5 + (menuD1Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        decay1Exponent = 1.0 + ((500.0 - menuD1Exp) * (2.5 / 500.0));
         menuLedColor2=0;
       } else if (menuD1Exp>=524) {
-        decay1Exponent = 1.0 + ((menuD1Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+        decay1Exponent = 0.5 + ((1023 - menuD1Exp) * (0.5 / (1023.0 - 524.0))); 
         menuLedColor2=1;
       } else {
         decay1Exponent=1.0; 
         menuLedColor2=2;
       }
       if (menuR1Exp<=500) {
-        release1Exponent = 0.5 + (menuR1Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        release1Exponent = 1.0 + ((500.0 - menuR1Exp) * (2.5 / 500.0));
         menuLedColor4=0;
-      } else if (menuD1Exp>=524) {
-        release1Exponent = 1.0 + ((menuR1Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+      } else if (menuR1Exp>=524) {
+        release1Exponent = 0.5 + ((1023 - menuR1Exp) * (0.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
         menuLedColor4=1;
       } else {
         release1Exponent=1.0; 
         menuLedColor4=2;
       }
+      //
     } else {
       if (menuA1Exp<=341) { attack1Exponent=envelopeExponent0; menuLedColor1=0; } //fast start, slow finish. GREEN LED
       else if (menuA1Exp<=682) { attack1Exponent=envelopeExponent1; menuLedColor1=2; } //linear NO LED
@@ -66,20 +68,24 @@ void menu1() {
         menuLedColor1=2;
       }
       if (menuD2Exp<=500) {
-        decay2Exponent = 0.5 + (menuD2Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        //decay2Exponent = 0.5 + (menuD2Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        decay2Exponent = 1.0 + ((500.0 - menuD2Exp) * (2.5 / 500.0));
         menuLedColor2=0;
       } else if (menuD2Exp>=524) {
-        decay2Exponent = 1.0 + ((menuD2Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+        //decay2Exponent = 1.0 + ((menuD2Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+        decay2Exponent = 0.5 + ((1023 - menuD2Exp) * (0.5 / (1023.0 - 524.0))); 
         menuLedColor2=1;
       } else {
         decay2Exponent=1.0; 
         menuLedColor2=2;
       }
       if (menuR2Exp<=500) {
-        release2Exponent = 0.5 + (menuR2Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        //release2Exponent = 0.5 + (menuR2Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0
+        release2Exponent = 1.0 + ((500.0 - menuR2Exp) * (2.5 / 500.0));
         menuLedColor4=0;
       } else if (menuD2Exp>=524) {
-        release2Exponent = 1.0 + ((menuR2Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+        //release2Exponent = 1.0 + ((menuR2Exp - 524) * (2.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
+        release2Exponent = 0.5 + ((1023 - menuR2Exp) * (0.5 / (1023 - 524)));  // Maps 525-1023 to 1.0-3.5
         menuLedColor4=1;
       } else {
         release2Exponent=1.0; 
