@@ -46,7 +46,7 @@ byte sustainMultiplierCh2 = sustainMultiplier;
 //byte originalSustainMultiplier; //is set to sustainMultiplier in setup. Used for nDecay. could be omitted if using two above Ch1, Ch2
 const int menuHoldTime=500; //how long you should hold the button to go into hold menu. (in milliseconds).
 //The three different time windows you can choose for each curve.
-const int envelopeMultiplier0=0.5;
+const int envelopeMultiplier0=1;
 const int envelopeMultiplier1=5;
 const int envelopeMultiplier2=50;
 
@@ -151,7 +151,7 @@ unsigned int decayValueCh2;
 unsigned int sustainValueCh2;
 unsigned int releaseValueCh2;
 
-//lin log antilog? 1=lin, 0.1= and 5.0=exponential 3.5 is most natural exponential growth. <1=fast start slow finish like caps. >1.0 slow start fast finish, exponential.
+//lin log antilog? 1=lin, 0.1=logarithmic and 5.0=exponential 3.5 is most natural exponential growth. <1=fast start slow finish like caps. >1.0 slow start fast finish, exponential.
 float attack1Exponent = 1.0;
 float decay1Exponent = 1.0;
 float release1Exponent = 1.0;

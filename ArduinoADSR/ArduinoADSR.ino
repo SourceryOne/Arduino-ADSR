@@ -9,6 +9,7 @@
  *HAVE TO FIX EnvelopeWrite2 as it is wrong!
  *0.6 -changed the exponent of decay and release as they seem to have been reversed.
  *0.7 -fixed envelopeWrite2, and the shape menu so it works as it should...
+ *v0.8 0.5 doesnt work on lengthmultiplication
  */
  
  

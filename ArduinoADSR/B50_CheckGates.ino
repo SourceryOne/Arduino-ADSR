@@ -23,6 +23,8 @@ void checkGates() {
         //gate2 is not active
         gate2Active=0;
       }
+      if (moduleMode==2 && gate1Active==1) {gate2Active=1;}
+      
       break; //Do nothing, leave Ch2 to its own.
     case 1: //ATTACK
       if (envelope1Phase==12) { gate2Active=1; } //force Envelope2 to start. Should be in trig or nLoop to work best...
