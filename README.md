@@ -45,7 +45,7 @@ Well the visual element is not something I have seen before. Some of the feature
 
 The standard full kit comes without the Arduino, because it is so easy to source it yourself, and program it. Here is one place I have bought Arduino Nanos for around 3$ nowadays
 
-[Link to iBOM for back PCB]((https://htmlpreview.github.io/?https://github.com/SourceryOne/Arduino-ADSR/blob/main/ADSR_Back_PCB_iBOM_v1.html)
+[Link to iBOM for back PCB](https://htmlpreview.github.io/?https://github.com/SourceryOne/Arduino-ADSR/blob/main/ADSR_Back_PCB_iBOM_v1.html)
 
 [Link to iBOM for front PCB](https://htmlpreview.github.io/?https://github.com/SourceryOne/Arduino-ADSR/blob/ADSR_Front_PCB_iBOM_v1.html)
 
