@@ -176,7 +176,7 @@ void menu4() {
     if (isBitSet(potsCaught,1)) {
       //nDecay
       nLoopDecayCh2=map(menuD2nDecay,0,1023,0,100); //100 is no decay
-      if (nLoopDecayCh2=100) { menuLeds(3,3,3,3); 
+      if (nLoopDecayCh2==100) { menuLeds(3,3,3,3); 
       } else if (nLoopDecayCh2>75) { menuLeds(3,0,3,3); 
       } else if (nLoopDecayCh2>50) { menuLeds(3,2,3,3); 
       } else { menuLeds(3,1,3,3); }

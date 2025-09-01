@@ -72,27 +72,7 @@ void loop() {
     maxValueCh2=maxValue;
     sustainMultiplierCh2=sustainMultiplier;
   }
-  //Serial.print(sustainValueCh1); //the adding of the CV value to THIS variable messes upp the changing of channels and the values of the channel value, also when selecting target for cv messes up along the way...
-  Serial.print (" attval: ");
-  Serial.print(attackValueCh2);
-  Serial.print (" gate: ");
-  Serial.print(gate2Active);
-  Serial.print (" phase: ");
-  Serial.print(envelope2Phase);
-  Serial.print (" rampdur:");
-  Serial.print(rampDuration2);
-  Serial.print (" val: ");
-  Serial.println(currentValue2);
-//   sustainValueCh1wCV=map(,0,1023,,1023); //or just limit the lower voltage?
-  //Serial.println(sustainValueCh1wCV); //the adding of the CV value to THIS variable messes upp the changing of channels and the values of the 
-/*  Serial.print (envelope1Phase);
-  Serial.print (" ");
-  Serial.print (nLoop1Active);
-  Serial.print (nLoop1Count);
-  Serial.println (nLoopLengthCh1);
-
-*/
-  
+   
 
 
   

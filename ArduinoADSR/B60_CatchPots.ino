@@ -185,7 +185,7 @@ void catchPots() {
    * Could maybe do with its own function? Or part of the catchpots still because they are quite intertwinced.
    * MAybe just do it once every 50 cycles?
    */
-   if (CVcontrolCount=50) {
+   if (CVcontrolCount==50) {
     CVcontrolCount=0;
     switch (CVcontrol) {
       case 0: 

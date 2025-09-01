@@ -10,6 +10,8 @@
  *0.6 -changed the exponent of decay and release as they seem to have been reversed.
  *0.7 -fixed envelopeWrite2, and the shape menu so it works as it should...
  *v0.8 0.5 doesnt work on lengthmultiplication
+ *v0.81 fixed a bunch of compiler errors.
+ *v0.82 removed all serial debug, for better response to short trigs.
  */
  
  

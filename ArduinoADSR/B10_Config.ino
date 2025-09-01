@@ -180,10 +180,10 @@ byte potsCaught=0b00000000; //need to catche the pots first. First four bits are
 byte wentAboveBelow=0b00000000; //set the first four bits if it goes above, and the four last bits if it goes below for the four pots...
 
 unsigned int attackPotRead, decayPotRead, sustainPotRead, releasePotRead; //the value read from the pot so we dont read it too often.
-int attackPotValue=0; //The final value to work with when the pots are caught and the value is read from the pot: attackPotValue = attackPotRead; 
-int decayPotValue=0;
-int sustainPotValue=0;
-int releasePotValue=0;
+unsigned int attackPotValue=0; //The final value to work with when the pots are caught and the value is read from the pot: attackPotValue = attackPotRead; 
+unsigned int decayPotValue=0;
+unsigned int sustainPotValue=0;
+unsigned int releasePotValue=0;
 byte catchPotsTimer=0;
 //int attackPotReadOld, decayPotReadOld, sustainPotReadOld, releasePotReadOld;
 //byte lastPotTurned;
