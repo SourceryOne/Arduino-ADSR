@@ -56,6 +56,10 @@ void menu1() {
 
     
   } else if (channelSelect) { //CHANNEL 2
+    menuA2Exp=attackPotValue;
+    menuD2Exp=decayPotValue;
+    menuR2Exp=releasePotValue;
+    
     if (advancedExponent) {
       if (menuA2Exp<=500) {
         attack2Exponent = 0.5 + (menuA2Exp * (0.5 / 500.0));  // Maps 0-512 to 0.5-1.0

@@ -12,6 +12,7 @@
  *v0.8 0.5 doesnt work on lengthmultiplication
  *v0.81 fixed a bunch of compiler errors.
  *v0.82 removed all serial debug, for better response to short trigs.
+ *v0.83 Thank you to Jos Bouten who found an error which made ADSR2 Slopes not being able to change. Fixed in this version.
  */
  
  
